@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Expense Manager</title>
+	</head>
+
+	<script src="js/libs/angular.min.js"></script>
+
+	<link href="resources/css/commonStyles.css" rel="stylesheet">
+
+
+	<script src="data/data.js"></script>
+
+	<script src="app.js"></script>
+	<script src="js/app/controllers/homeController.js"></script>
+
+	<body ng-app="expenseManager" class="expenseManagerApp" ng-controller="homeController">
+		
+		<h2 class="textAlign">Expense Manager</h2>
+		
+		<!--<form name="loginForm">
+			<label>Enter Your Name:
+				<input type="text" name="userName"ng-model="userName" required>
+			</label>
+
+			<div role="alert" class="errorMsg">
+    			<span class="error" ng-show="loginForm.userName.$error.required">
+      			User Name Required!</span>
+  			</div>
+
+  			<div class="userWelcomeMsg">
+				<span>{{ "Hello "+userName}}</span>
+			</div>
+		</form> -->
+
+		<div>
+			<!--<label>Enter Your Name:
+				<input type="text" name="userName"ng-model="userName" required>
+			</label>
+			<div class="paddingTop">
+				<span ng-show="!userName.length" class="errorMsg">Please enter user name</span>
+				<span ng-show="userName.length" class="userWelcomeMsg">{{ "Hello "+userName}}</span>
+			</div>
+
+			<div class="paddingTop">
+				<input type="button" value="Show My Report" ng-disabled="userName.length == 0" ng-click="getReports()">
+			</div>-->
+
+			<div class="paddingTop">
+				<input type="button" value="Show Income" ng-click="showIncomes()">
+				<input type="button" value="Show Expense" ng-click="showExpenses()">
+			</div>
+
+		</div>
+		
+		<div class="userReportWrapper">
+			
+			<div class="userIncomeWrapper textAlign" ng-show="showIncome">
+				<table class="customTable">
+					<caption class="paddingTop paddingBottom">Income List</caption>
+					<!--<tr>
+						<th>PAYER</th>
+						<th>PAYEE</th>
+						<th>AMOUNT</th>
+						<th>DATE</th>
+					</tr>
+					<tr ng-repeat="item in incomes track by $index">
+						<td>{{ item.payer | uppercase }}</td>
+						<td>{{ item.payee | uppercase }}</td>
+						<td>{{ item.amount }}</td>
+						<td>{{ item.date }}</td>
+					</tr>-->
+					<tr ng-repeat="item in incomes | limitTo:1">
+						<th ng-repeat="(key,value) in item">{{ key | uppercase }}</th>
+					</tr>
+					<tr ng-repeat="item in incomes track by $index">
+						<td ng-repeat="(key,value) in item">{{ value }}</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="userExpenseWrapper textAlign" ng-show="showExpense">
+				<table class="customTable">
+					<caption class="paddingTop paddingBottom">Expense List</caption>
+					<tr ng-repeat="item in expenses | limitTo:1">
+						<th ng-repeat="(key, value) in item">{{ key | uppercase }}</th>
+					</tr>
+					<tr ng-repeat="item in expenses track by $index">
+						<td ng-repeat="(key,value) in item">{{ value }}</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+		
+	</body>
+
+</html>

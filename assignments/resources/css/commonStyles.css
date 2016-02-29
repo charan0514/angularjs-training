@@ -1,0 +1,27 @@
+.expenseManagerApp .textAlign {
+  text-align: center; }
+.expenseManagerApp .errorMsg {
+  color: red; }
+.expenseManagerApp .userWelcomeMsg {
+  color: #1C8416; }
+.expenseManagerApp .paddingTop {
+  padding-top: 10px; }
+.expenseManagerApp .paddingBottom {
+  padding-bottom: 10px; }
+.expenseManagerApp .userReportWrapper {
+  padding: 10px; }
+.expenseManagerApp .userIncomeWrapper .customTable, .expenseManagerApp .userExpenseWrapper .customTable {
+  width: 100%;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px; }
+  .expenseManagerApp .userIncomeWrapper .customTable th, .expenseManagerApp .userIncomeWrapper .customTable td, .expenseManagerApp .userExpenseWrapper .customTable th, .expenseManagerApp .userExpenseWrapper .customTable td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px; }
+  .expenseManagerApp .userIncomeWrapper .customTable tr:nth-child(odd), .expenseManagerApp .userExpenseWrapper .customTable tr:nth-child(odd) {
+    background-color: #f2f2f2; }
+  .expenseManagerApp .userIncomeWrapper .customTable tr:nth-child(even), .expenseManagerApp .userExpenseWrapper .customTable tr:nth-child(even) {
+    background-color: #ffffff; }
+
+/*# sourceMappingURL=commonStyles.css.map */
